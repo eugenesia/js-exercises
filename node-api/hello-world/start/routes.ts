@@ -8,6 +8,7 @@
 */
 
 import router from '@adonisjs/core/services/router'
+const ResourcesController = () => import('#controllers/resources_controller')
 
 router.get('/', async () => {
   return {
@@ -20,3 +21,5 @@ router.get('/hello', async () => {
     hello: 'world2',
   }
 })
+
+router.get('/resources', [ResourcesController, 'index'])
